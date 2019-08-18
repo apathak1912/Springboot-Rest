@@ -10,6 +10,10 @@ public class User {
 		this.name = name;
 	}
 
+	public User() {
+		
+	}
+
 	private long id;
 
 	
