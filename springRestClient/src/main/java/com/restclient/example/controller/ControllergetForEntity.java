@@ -31,13 +31,13 @@ public class ControllergetForEntity {
 	}
 	
 	@GetMapping(path="/userwithmap")
-	public ResponseEntity<String> getUserWithMap(){
+	public ResponseEntity<User> getUserWithMap(){
 		String url ="http://localhost:8080/test/getUser/{id}";
 		RestTemplate resttemplate = new RestTemplate();
 		Map<String,Integer> pathvariables = new TreeMap<String,Integer>();
 		pathvariables.put("id", 3);
-		String result = resttemplate.getForObject(url, String.class,pathvariables);
-		return new ResponseEntity<String>(result,HttpStatus.OK);
+		ResponseEntity<User> result = resttemplate.getForEntity(url, User.class,pathvariables);
+		return result;
 	}
 
 }
